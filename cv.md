@@ -18,6 +18,12 @@ ___
 
 Ability to learn quickly, attentiveness, responsibility, perseverance, reliability, focus on results, adaptability, ability to work in a team, as well as high performance in multitasking mode.
 
+___
+## Skills
+
+- HTML/CSS
+- JavaScript (base)
+- C# (base)
 
 ___
 
@@ -33,3 +39,24 @@ function min(a,b){
 console.log(min(0,-10));
 ```
 ___
+
+## Experience
+- I studied English at international house for 6 months ;
+- development of the project "Automated workplace of a car service employee" ;
+- a lot of laboratory work .
+___
+## Education
+### higher education
+
+- 2016 - 2020 Educational institution " Institute of Information Technologies of BSUIR" in the specialty information technology software qualification: software engineer ;
+
+- 2013-2016 Minsk State Higher Radio Engineering College in the specialty information technology software qualification: programmer technician.
+___
+
+### Languages
+
+- Russian
+
+- English (A1)
+
+- Belarussian
