@@ -500,7 +500,7 @@ aside{
 .summary-content__profile span{
     display: inline-block;
     font-weight: normal;
-    color: #fafafa;
+    color: rgb(55, 143, 38);
     font-style: italic;
     font-size: 20px;
     padding-bottom: 15px;
