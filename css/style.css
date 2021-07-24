@@ -642,7 +642,7 @@ article section .content__education__items li p{
 }
 
 .css{
-    width: 55%;
+    width: 45%;
     animation: css 2s;
 }
 
@@ -675,7 +675,7 @@ article section .content__education__items li p{
         width: 0%;
     }
     100%{
-        width: 55%;
+        width: 45%;
     }
 }
 
