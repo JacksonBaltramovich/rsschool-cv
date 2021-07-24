@@ -1,1 +1,1 @@
-https://JacksonBaltramovich.github.io/rsschool-cv/cv
+https://JacksonBaltramovich.github.io/rsschool-cv/
