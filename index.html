@@ -6,25 +6,49 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CV</title>
     <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css" integrity="sha256-46r060N2LrChLLb5zowXQ72/iKKNiw/lAmygmHExk/o=" crossorigin="anonymous" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/highlight.min.js" integrity="sha512-MinqHeqca99q5bWxFNQEQpplMBFiUNrEwuuDj2rCSh1DgeeTXUgvgYIHZ1puBS9IKBkdfLMSk/ZWVDasa3Y/2A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/styles/an-old-hope.min.css" integrity="sha512-t47CjkEB5hx4FojnE73dBLwgrgvLBpgsHvB40ycK3cYPkLwEp7qNHyRpRDA3/zVVAAOUPJwbMVJq3uJrBqpHVQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script>hljs.initHighlightingOnLoad();</script>
+    <meta name="viewport" content="width=device-width">
 </head>
 <body>
-    <main class="summary">
-        <aside>
+    <header class="header">
+
+        <a href="" class="header-card">
+            <h2 class="header-name">Evgeniy Baltramovich</h2>
+            <p class="header-profession">Web Developer</p>
+        </a>
+        <div class="openMenu"><i class="fa fa-bars"></i></div>
+            <ul class="mainMenu">
+                <li><a href="#profile">Profile</a></li>
+                <li><a href="#contacts">Contact me</a></li>
+                <li><a href="#personal-skills">Personal skills</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#professional-skills">Professional skills</a></li>
+                <li><a href="#code">Code</a></li>
+                <li><a href="#project">Project</a></li>
+                <div class="closeMenu"><i class="fa fa-times"></i></div>
+            </ul>
+
+    </header>
+    <main class="summary-content">
+        <aside class="left-section">
             <header class="summary__header">
                 <div class="summary-header__avatar">
-                    <img src="./img/avatar.jpg" alt="avatar">
+                    <img src="./img/photo.jpg" alt="avatar">
                 </div>
             </header>
 
             <div class="summary__content">
 
                 <section class="summary-content__name__profession">
-                    <h2 class="summary-content__name">Baltramovich Evgeniy</h2>
+                    <h1 class="summary-content__name">Baltramovich Evgeniy</h1>
                     <h2 class="summary-content__profession">Web Developer</h2>
                 </section>
 
                 <section class="summary-content__profile">
-                    <h2 class="summary-content__title">
+                    <h2 class="summary-content__title" id="profile">
                         Profile
                     </h2>
                     <p class="summary-content__description">
@@ -38,48 +62,31 @@
                         in multitasking mode. Thanks to the service, I have mastered an important
                         component of our life: to effectively do what you say.
                     </p>
+                    <h2 class="summary-content__title" id="contacts">
+                        Contact me
+                    </h2>
+                    <h3 class="summary-content__title__phone__number">
+                        Phone number
+                    </h3>
+                    <span class="summary-content__phone__number">
+                        <a href="tel:+375298788092">+ 375(29) 878-80-92</a>
+                    </span>
 
-                    <ul class="summary__content__list-about">
-                        <li>
-                            <h2>
-                                Contact me
-                            </h2>
-                        </li>
-                        <li>
-                            <h3>
-                                Phone number
-                            </h3>
-                        </li>
-                        <li>
-                            <span>
-                                <a href="tel:+375298788092">+ 375(29) 878-80-92</a>
-                            </span>
-                            
-                        </li>
-                        <li>
-                            <h3>
-                                Email adress
-                            </h3>                            
-                        </li>
+                    <h3 class="summary-content__title__email">
+                        Email adress
+                    </h3>
 
-                        <li>
-                            <span>
-                                <a href="mailto:e.baltramovich@mail.ru">e.baltramovich@mail.ru</a> 
-                            </span>
-                        </li>
-                        <li>
-                            <h3>
-                                Adress
-                            </h3>
-                        </li>
-                        <li>
-                            <span>
-                                Republic of Belarus, Minsk
-                            </span>
-                        </li>
-                    </ul>
+                    <span class="summary-content__email">
+                        <a href="mailto:e.baltramovich@mail.ru">e.baltramovich@mail.ru</a> 
+                    </span>
 
-                    <h2 class="summary-content__personal__qualities">
+                    <h3 class="summary-content__title__adress">
+                        Address
+                    </h3>
+                    <span class="summary-content__adress">
+                        Republic of Belarus, Minsk
+                    </span>
+                    <h2 class="summary-content__personal__qualities" id="personal-skills">
                         Personal skills
                     </h2>
 
@@ -98,12 +105,11 @@
             </div>
 
         </aside>
-        <article class="summary__main__content content">
-            <header class="content__head">
-                <h1 class="content__head__welcome">Welcome to my CV</h1>
-            </header>
 
-            <section class="content__education">
+
+        <article class="summary__main__content">
+
+            <section class="content__education" id="education">
                 <h2>Education</h2>
                 <ul class="content__education__items">
                     <li class="education__item">
@@ -122,7 +128,7 @@
                 </ul>
             </section>
             
-            <section class="content__professional__skills">
+            <section class="content__professional__skills" id="professional-skills">
                 <h2>Professional skills</h2>
                 <div class="skills">
                     <ul>
@@ -152,58 +158,95 @@
             </section>
 
 
-            <section class="content__example__code">
+            <section class="content__example__code" id="code">
 
                 <h2>Code</h2>
-                
-                <code>
-                    function min(a,b){ <br>
-                        &nbsp;if(a&lt;b) <br>
-                        &nbsp;&nbsp;return a; <br>
-                        &nbsp;else <br>
-                        &nbsp;&nbsp;return b; <br>
-                      } <br>
-                        console.log(min(27,54)); <br>
-                        &gt; 54
-                </code>
+                <pre>
+                    <code class="find-min-js">
+function min(a,b){ <br>
+  &nbsp;if(a&lt;b) <br>
+  &nbsp;&nbsp;return a; <br>
+  &nbsp;else <br>
+  &nbsp;&nbsp;return b; <br>
+  } <br>
+  console.log(min(27,54)); <br>
+  &gt; 54
+                    </code>
+                </pre>
                 
 
             </section>
 
-            <section class="summary__english-level">
+            <section class="summary__english-level" id="english">
 
                 <h2>English level</h2>
                 <h3>At the moment, the English level is A1. I have completed the English language courses "International House": 3 months at the A0 level and 3 months at the A1 level(not completely, due to personal circumstances).</h3>
 
             </section>
 
-        </article>
-        <footer class="summary__footer__logo">
-            <div class="wrapper">
-                <div class="footer__rsschool-logo">
-                    <a href="https://rs.school/js/">
-                        <img src="img/rs_school_js.svg" alt="RS School Logo">  
-                    </a>   
+            <section class="my-project" id="project">
+
+                <h2>Project</h2>
+                <div class="project-desc">
+                    <div>
+                        <h3 class="name-proj">MUSEUM LANDING PAGE - HTML, CSS</h3>
+                        <p class="text_proj_desc">A landing page for Louvre.<br>
+                            One of the largest and most popular art museums in the world<br>
+                            A task for RS School course.
+                        </p>
+                    </div>
+                    <div>
+                        <a href="https://rolling-scopes-school.github.io/jacksonbaltramovich-JSFEPRESCHOOL/museum/" target="_blank">
+                            <img src="img/museum.PNG" alt="museum project" class="proj-image">
+                        </a>
+                    </div>
                 </div>
 
-            </div>
-        </footer>
-        <footer class="summary__footer__link">
-            <div class="wrapper__link__github">
-                <a href="https://github.com/JacksonBaltramovich">
-                    <img src="img/github.svg" alt="github icon">
-                </a>
+                <div class="project-desc">
+                    <div>
+                        <h3 class="name-proj">Vertical slider - HTML, CSS, JS</h3>
+                        <p class="text_proj_desc">The slider is a very popular and popular
+                             element of various websites and web projects, which has many different variations.
+                             <br>A task for RS School course.
+                        </p>
+                    </div>
+                    <div>
+                        <a href="https://rolling-scopes-school.github.io/jacksonbaltramovich-JSFEPRESCHOOL/vertical-slider/" target="_blank">
+                            <img src="img/vertical-slider.PNG" alt="vertical-slider project" class="proj-image">
+                        </a>
+                    </div>
+                </div>
+                
+                
 
-                <a href="https://telegram.me/BaltrEvgeniy">
-                    <img src="img/telegram.jpg" alt="telegram icon">
-                </a>
+            </section>
 
-                <p class="footer__copyright">
-                    Copyright © 2021
-                </p>
-            </div>
-        </footer>
+        </article>
     </main>
+
+    <footer>
+        <div class="footer">
+            <div class="footer__rsschool-logo">
+                <a href="https://rs.school/js/">
+                    <img src="./img/rs_school_js.svg" alt="RS School Logo">  
+                </a>   
+            </div>
+            <a href="https://github.com/JacksonBaltramovich">
+                <img src="./img/github.svg" alt="github icon">
+            </a>
     
+            <a href="https://telegram.me/BaltrEvgeniy">
+                <img src="./img/telegram.jpg" alt="telegram icon">
+            </a>
+    
+            <p class="footer__copyright">
+                Copyright © 2021
+            </p>
+            
+        </div>
+            
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+    <script src="script/script.js"></script>
 </body>
 </html>
