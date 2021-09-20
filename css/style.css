@@ -362,45 +362,8 @@ textarea {
 }
 
 
-/* open-sans-300 - latin */
-@font-face {
-    font-family: 'Open Sans';
-    font-style: normal;
-    font-weight: 300;
-    src: local(''),
-         url('../fonts/open-sans-v20-latin-300.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-         url('../fonts/open-sans-v20-latin-300.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-  }
-  /* open-sans-italic - latin */
-  @font-face {
-    font-family: 'Open Sans';
-    font-style: italic;
-    font-weight: 400;
-    src: local(''),
-         url('../fonts/open-sans-v20-latin-italic.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-         url('../fonts/open-sans-v20-latin-italic.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-  }
-  /* open-sans-regular - latin */
-  @font-face {
-    font-family: 'Open Sans';
-    font-style: normal;
-    font-weight: 400;
-    src: local(''),
-         url('../fonts/open-sans-v20-latin-regular.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-         url('../fonts/open-sans-v20-latin-regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-  }
-  /* open-sans-600 - latin */
-  @font-face {
-    font-family: 'Open Sans';
-    font-style: normal;
-    font-weight: 600;
-    src: local(''),
-         url('../fonts/open-sans-v20-latin-600.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-         url('../fonts/open-sans-v20-latin-600.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-  }
-
 body {
-    font-family: "Open Sans", Arial, Helvetica, sans-serif;
+    font-family: 'Open Sans', sans-serif;
 }
 
 html{
@@ -453,7 +416,7 @@ html{
     display: none;
     cursor: pointer;
 }
-.mainMenu .closeMenu {
+.closeMenu {
     font-size: 2rem;
     display: none;
     cursor: pointer;
@@ -498,7 +461,6 @@ html{
     grid-template-columns: repeat(7, 1fr);
     margin-left: auto;
     margin-right: auto;
-    min-height: 100vh;
 }
 
 
@@ -568,9 +530,10 @@ aside{
     font-weight: normal;
     color: #fafafa;
     opacity: .9;
-    font-style: italic;
     font-size: 20px;
     padding: 15px;
+    letter-spacing: 1px;
+    line-height: 1.1;
 }
 
 .summary-content__title:nth-child(3){
@@ -587,7 +550,6 @@ aside{
     display: inline-block;
     font-weight: normal;
     color: #fafafa;
-    font-style: italic;
     font-size: 20px;
     padding-bottom: 15px;
 }
@@ -609,7 +571,7 @@ aside{
     margin-top: 15px;
     padding-left: 50px;
     max-width: 90%;
-    font-style: italic;
+    line-height: 1.2;
 }
 
 .summary__qualities__item{
@@ -629,8 +591,15 @@ article{
     height: 100%;
 }
 
+.welcome-title {
+    text-align: center;
+    padding-bottom: 40px;
+    font-weight: 600;
+    font-size: 30px;
+}
 
-article section h1{
+
+article h1{
     padding: 15px;
     text-align: center;
     text-transform: uppercase;
@@ -640,7 +609,7 @@ article section h1{
     box-shadow: 0 0 10px cyan;
 }
 
-.content__education h2{
+.summary__main__content h2{
     text-align: center;
     text-transform: uppercase;
     padding: 15px;
@@ -654,29 +623,27 @@ article section h1{
     margin: 30px auto;
     padding-left: 50px;
     max-width: 100%;
-    font-style: italic;
 }
 
-article section .content__education__items li{
+article .content__education__items li{
     font-size: 20px;
     list-style-type: disc;
     padding-bottom: 30px;
 }
 
-article section .content__education__items li span{
+article .content__education__items li span{
     display: inline-block;
     font-size: 23px;
     line-height: 1.3;
     letter-spacing: 0.04em;
-    font-style: italic;
     list-style-type: disc;
     margin-bottom: 10px;
 }
 
-article section .content__education__items li p{
+article .content__education__items li p{
     font-size: 18px;
     line-height: 1.4;
-    letter-spacing: 0.04em;
+    letter-spacing: 1px;
 }
 
 .content__professional__skills{
@@ -845,10 +812,10 @@ article section .content__education__items li p{
     padding-right: 5px;
     color: #fafafa;
     opacity: .9;
-    font-style: italic;
     font-size: 20px;
     padding-bottom: 20px;
     margin: 30px auto;
+    line-height: 1.2;
 }
 
 .my-project h2 {
