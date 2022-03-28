@@ -326,6 +326,7 @@ input,
 select,
 textarea {
     color: #fafafa;
+    scroll-behavior: smooth;
 }
 
 
@@ -361,45 +362,8 @@ textarea {
 }
 
 
-/* open-sans-300 - latin */
-@font-face {
-    font-family: 'Open Sans';
-    font-style: normal;
-    font-weight: 300;
-    src: local(''),
-         url('../fonts/open-sans-v20-latin-300.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-         url('../fonts/open-sans-v20-latin-300.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-  }
-  /* open-sans-italic - latin */
-  @font-face {
-    font-family: 'Open Sans';
-    font-style: italic;
-    font-weight: 400;
-    src: local(''),
-         url('../fonts/open-sans-v20-latin-italic.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-         url('../fonts/open-sans-v20-latin-italic.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-  }
-  /* open-sans-regular - latin */
-  @font-face {
-    font-family: 'Open Sans';
-    font-style: normal;
-    font-weight: 400;
-    src: local(''),
-         url('../fonts/open-sans-v20-latin-regular.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-         url('../fonts/open-sans-v20-latin-regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-  }
-  /* open-sans-600 - latin */
-  @font-face {
-    font-family: 'Open Sans';
-    font-style: normal;
-    font-weight: 600;
-    src: local(''),
-         url('../fonts/open-sans-v20-latin-600.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-         url('../fonts/open-sans-v20-latin-600.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-  }
-
 body {
-    font-family: "Open Sans", Arial, Helvetica, sans-serif;
+    font-family: 'Open Sans', sans-serif;
 }
 
 html{
@@ -409,36 +373,120 @@ html{
     box-sizing: inherit;
 }
 
-.summary{
-    display: grid;
-    grid-template-rows: auto;
-    grid-template-columns: 400px auto;
+
+
+.header {
+    background: rgb(0, 0, 0);
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
     max-width: 1450px;
+    align-items: center;
+}
+
+.header-card {
+    color: #fff;
+    font-size: 14px;
+    text-decoration: none;
+    text-align: center;
+    text-transform: uppercase;
+    padding: 15px 20px;
+    letter-spacing: 1px;
+}
+
+.mainMenu {
+    display: flex;
+    list-style: none;
+}
+.mainMenu li a {
+    display: inline-block;
+    padding: 15px;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #fff;
+    font-size: 13px;
+}
+.mainMenu li a:hover {
+    background: rgb(116, 116, 34);
+}
+.openMenu {
+    font-size: 2rem;
+    margin: 20px;
+    display: none;
+    cursor: pointer;
+}
+.closeMenu {
+    font-size: 2rem;
+    display: none;
+    cursor: pointer;
+}
+
+@media(max-width: 800px){
+    .mainMenu {
+        height: 100vh;
+        position: fixed;
+        top: 0;
+        right: 0;
+        left: 0;
+        z-index: 10;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background: #000;
+        transition: top 1s ease;
+        display: none;
+    }
+    .mainMenu .closeMenu {
+        display: block;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+
+    }
+    .openMenu {
+        display: block;
+    }
+    .mainMenu li a:hover {
+        background: none;
+        color: rgb(255, 255, 0);
+        font-size: 1.6rem;
+    }
+}
+
+
+.summary-content{
+    display: grid;
+    max-width: 1450px;
+    grid-template-columns: repeat(7, 1fr);
     margin-left: auto;
     margin-right: auto;
+}
+
+
+.left-section {
+    grid-column: span 2;
     height: 100%;
+    padding: 10px 0 10px 0;
 }
 
 .summary__header{
     position: relative;
     flex: 0 0 auto;
-    width: 400px;
-    height: 300px;
 }
 
 .summary-header__avatar{
     display: flex;
-    position: absolute;
-    top: 25%;
-    left: 25%;
+    max-width: 300px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .summary-header__avatar img{
-    display: block;
-    border-radius: 100px;
-    width: 200px;
-    height: 200px;
-    margin: 0 auto;
+    width: 100%;
+    border-radius: 50%;
+    text-align: center;
+    border: 4px solid rgb(206, 200, 200);
 }
 
 aside{
@@ -451,7 +499,7 @@ aside{
 
 .summary-content__name__profession{
     text-align: center;
-    padding-bottom: 50px;
+    padding: 20px 0 50px 0;
 }
 
 .summary-content__name{
@@ -482,9 +530,10 @@ aside{
     font-weight: normal;
     color: #fafafa;
     opacity: .9;
-    font-style: italic;
     font-size: 20px;
     padding: 15px;
+    letter-spacing: 1px;
+    line-height: 1.1;
 }
 
 .summary-content__title:nth-child(3){
@@ -501,7 +550,6 @@ aside{
     display: inline-block;
     font-weight: normal;
     color: #fafafa;
-    font-style: italic;
     font-size: 20px;
     padding-bottom: 15px;
 }
@@ -523,7 +571,7 @@ aside{
     margin-top: 15px;
     padding-left: 50px;
     max-width: 90%;
-    font-style: italic;
+    line-height: 1.2;
 }
 
 .summary__qualities__item{
@@ -538,15 +586,20 @@ article{
     
 }
 
-.content__head__welcome{
-    text-align: center;
-    text-transform: uppercase;
-    font-weight: 600;
-    font-size: 25px;
-    padding-bottom: 70px;
+.summary__main__content {
+    grid-column: span 5;
+    height: 100%;
 }
 
-article section h1{
+.welcome-title {
+    text-align: center;
+    padding-bottom: 40px;
+    font-weight: 600;
+    font-size: 30px;
+}
+
+
+article h1{
     padding: 15px;
     text-align: center;
     text-transform: uppercase;
@@ -556,7 +609,7 @@ article section h1{
     box-shadow: 0 0 10px cyan;
 }
 
-.content__education h2{
+.summary__main__content h2{
     text-align: center;
     text-transform: uppercase;
     padding: 15px;
@@ -570,29 +623,27 @@ article section h1{
     margin: 30px auto;
     padding-left: 50px;
     max-width: 100%;
-    font-style: italic;
 }
 
-article section .content__education__items li{
+article .content__education__items li{
     font-size: 20px;
     list-style-type: disc;
     padding-bottom: 30px;
 }
 
-article section .content__education__items li span{
+article .content__education__items li span{
     display: inline-block;
     font-size: 23px;
     line-height: 1.3;
     letter-spacing: 0.04em;
-    font-style: italic;
     list-style-type: disc;
     margin-bottom: 10px;
 }
 
-article section .content__education__items li p{
+article .content__education__items li p{
     font-size: 18px;
     line-height: 1.4;
-    letter-spacing: 0.04em;
+    letter-spacing: 1px;
 }
 
 .content__professional__skills{
@@ -626,7 +677,6 @@ article section .content__education__items li p{
     height: 3px;
     border: 1px solid rgba(0, 0, 0, 0.3);
     border-radius: 3px;
-    overflow: hidden;
     box-shadow: 0 0 10px #2187e7b3;
 }
 
@@ -642,7 +692,7 @@ article section .content__education__items li p{
 }
 
 .css{
-    width: 45%;
+    width: 55%;
     animation: css 2s;
 }
 
@@ -675,7 +725,7 @@ article section .content__education__items li p{
         width: 0%;
     }
     100%{
-        width: 45%;
+        width: 55%;
     }
 }
 
@@ -713,12 +763,18 @@ article section .content__education__items li p{
     margin: 1em 0px;
 }
 
+.hljs {
+    display: block;
+    overflow-x: auto;
+    padding: .5em;
+    background: #F0F0F0;
+}
+
 .content__example__code code{
     display: block;
     margin: 30px auto;
     font-size: 20px;
     text-align: left;
-    color: rgb(55, 143, 38);
     max-width: 100%; 
     font-family: monospace;
 }
@@ -731,6 +787,13 @@ article section .content__education__items li p{
     font-size: 25px;
     padding-bottom: 15px;
     box-shadow: 0 0 10px cyan;
+}
+
+.find-min-js {
+    display: block;
+    overflow-x: auto;
+    overflow-y: hidden;
+    background: #363b42;
 }
 
 .summary__english-level h2{
@@ -749,13 +812,66 @@ article section .content__education__items li p{
     padding-right: 5px;
     color: #fafafa;
     opacity: .9;
-    font-style: italic;
     font-size: 20px;
     padding-bottom: 20px;
     margin: 30px auto;
+    line-height: 1.2;
 }
 
-footer .wrapper{
+.my-project h2 {
+    text-align: center;
+    text-transform: uppercase;
+    padding: 15px;
+    font-weight: 600;
+    font-size: 25px;
+    padding-bottom: 15px;
+    box-shadow: 0 0 10px cyan;
+}
+
+.name-proj {
+    font-size: 22px;
+    letter-spacing: 1px;
+}
+
+.project-desc {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #1c1d21;
+    margin-top: 40px;
+    margin-bottom: 20px;
+}
+
+.project-desc div h3{
+    padding-bottom: 15px;
+}
+
+
+.text_proj_desc {
+    letter-spacing: 1px;
+}
+
+.project-desc div {
+    margin: 25px;
+    text-align: center;
+    align-items: center;
+}
+
+.proj-image {
+    max-width: 250px;
+    margin: 10px;
+    border: 2px solid #413f5a;
+}
+
+footer{
+    margin: 0 auto;
+}
+
+
+
+.footer{
+    max-width: 1450px;
     display: flex;
     padding-top: 1em;
     padding-bottom: 1em;
@@ -763,24 +879,107 @@ footer .wrapper{
     justify-content: space-around;
     align-content: space-around;
     background: #4e4f50;
+    margin: 0 auto;
 }
 
-footer .footer__rsschool-logo{
-    width: 150px;
-    height: auto;
+
+.footer__rsschool-logo a img {
+    height: 80px;
+    width: 80px;
 }
 
-.summary__footer__link img{
-    width: 56px;
-    height: auto;
+footer a img {
+    height: 50px;
+    width: 50px;
 }
 
-footer .wrapper__link__github{
-    display: flex;
-    padding-top: 1em;
-    padding-bottom: 1em;
-    align-items: center;
-    justify-content: space-around;
-    align-content: space-around;
-    background: #4e4f50;
+@media screen and (max-width:1030px){
+    .mainMenu li a{
+        font-size: 10px;
+    }
+}
+
+@media screen and (max-width:891px){
+    .mainMenu li a{
+        font-size: 9px;
+    }
+}
+@media screen and (max-width:847px){
+    .mainMenu li a{
+        font-size: 8px;
+    }
+}
+
+@media screen and (max-width:803px){
+    .mainMenu li a{
+        font-size: 7.5px;
+    }
+}
+
+@media screen and (max-width:800px){
+    .mainMenu li a{
+        font-size: 18px;
+    }
+}
+
+@media screen and (max-width:730px){
+    .project-desc{
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+
+    }
+
+}
+
+@media screen and (max-width: 950px){
+    .left-section{
+        grid-column: span 3;
+    }
+    .summary__main__content{
+        grid-column: span 4;
+    }
+    .summary-header__avatar{
+        max-width: 200px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .summary-content__name {
+        font-size: 25px;
+    }
+
+    .proj-image {
+        width: 140px;
+    }
+}
+
+
+@media screen and (max-width:650px){
+    .summary-content{
+        grid-template-columns: repeat(1, 1fr);
+
+    }
+    .myname{
+        font-size: 1.5rem;
+    }
+    .photo {
+        max-width: 200px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media screen and (max-width:500px){
+    footer a img{
+        width: 30px;
+        height: 30px;
+    }
+
+    .footer__rsschool-logo a img {
+        width: 50px;
+        height: 50px;
+    }
+
 }
